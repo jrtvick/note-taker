@@ -1,45 +1,53 @@
-const router = require('express').Router();
-const fs = require('fs/promises')
-const { v4: uuidv4 } = require('uuid');
+const router = require("express").Router();
+const getRandomID = require("../helpers/randomIDs");
 
-const readData = async () => {
-  try {
-    var data = await fs.readFile('/db/db.json', 'utf-8')
-    return JSON.parse(data)
-  } catch (error) {
-    console.log(error)
-  }
-}
+const {
+  readAndAppend,
+  readFromFile,
+  writeToFile,
+} = require("../helpers/utilsFS");
 
-router.get('/', async (req, res) => {
-  var data = await readData()
-  res.json(data)
+router.get("/notes", (req, res) => {
+  console.info(`${req.method} request recieved for notes`);
+  readFromFile("./db/db.json").then((data) => {
+    res.json(JSON.parse(data));
+  });
 });
 
-router.post('/', async (req, res) => {
+router.post("/notes", (req, res) => {
+  console.info(`${req.method} request recieved for notes`);
+
   const { title, text } = req.body;
+
   if (req.body) {
-    const newNote = {
+    const newNotes = {
       title,
       text,
-      id: uuidv4(),
+      id: getRandomID(),
     };
-    const notes = await readData()
-    notes.push(newNote)
-    await fs.writeFile('/db/db.json', JSON.stringify(notes, null, 4))
-    res.json('Note added successfully! 📖');
+
+    readAndAppend(newNotes, "./db/db.json");
+    res.json("notes added successfully");
   } else {
-    res.error('Oh no, something went wrong!');
+    res.error("Error!!");
   }
 });
 
-router.delete('/:id', async (req, res) => {
-  console.log(req.params)
-  const noteId = req.params.id;
-  var notes = await readData()
-  const newNotes = notes.filter((note) => note.id !== noteId);
-  await fs.writeFile('/db/db.json', JSON.stringify(newNotes, null, 4))
-  res.json("Note has been deleted 🗑️");
-})
+router.delete("/notes/:id", (req, res) => {
+  console.log(req.params);
+  console.info(`${req.method} request recieved for notes`);
+  const notesid = req.params.id;
+  readFromFile("./db/db.json")
+    .then((data) => JSON.parse(data))
+    .then((json) => {
+      const deleting = json.filter(
+        (title, text) => title.id !== notesid && text.id !== notesid
+      );
+
+      writeToFile("./db/db.json", deleting);
+
+      res.json(`item ${notesid} has been deleted`);
+    });
+});
 
 module.exports = router;
