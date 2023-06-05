@@ -9,3 +9,17 @@ const writeToFile = (destination, content) =>
       ? console.error("Error!")
       : console.info(`\nData written to ${destination}`)
   );
+
+const readAndAppend = (content, file) => {
+  fs.readFile(file, "utf8", (err, data) => {
+    if (err) {
+      console.error(err);
+    } else {
+      const parseNotes = JSON.parse(data);
+      parseNotes.push(content);
+      writeToFile(file, parseNotes);
+    }
+  });
+};
+
+module.exports = { readAndAppend, readFromFile, writeToFile };
