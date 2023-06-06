@@ -27,9 +27,9 @@ router.post("/notes", (req, res) => {
     };
 
     readAndAppend(newNotes, "./db/db.json");
-    res.json("notes added successfully");
+    res.json("Note added successfully");
   } else {
-    res.error("Error!!");
+    res.error("Error");
   }
 });
 
@@ -46,7 +46,7 @@ router.delete("/notes/:id", (req, res) => {
 
       writeToFile("./db/db.json", deleting);
 
-      res.json(`item ${notesid} has been deleted`);
+      res.json(`Note ${notesid} has been deleted`);
     });
 });
 

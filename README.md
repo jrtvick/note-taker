@@ -3,7 +3,7 @@
 
 ## Description
 
-The SVG logo maker is a command-line application built using JavaScript and Node.js using the principles of Object-oriented Programming. This program is designed to create a simple logo for your projects. A logo is an essential component of any creative endeavour, providing a strong first impression of the project and its purpose. With this application, you no longer need to spend time manually designing a logo or hiring outside help. By answering a series of prompts, you can quickly generate a simple and effective SVG logo.
+The Note Taker is a front end application built using JavaScript (Node.js and Express) and Object Oriented Programming. This program is designed to create a simple note taker in a web browser in order to keep track of your lists and ideas. A note takcer is an essential component of any practical or creative endeavour, providing the user with the ability to document and retain their ideas and plans for whatever they are working on. With this application, you no longer need to spend time manually writing down your notes. Through simple mouse and keyboard usage you can quickly generate many notes.
 
 
 ## Installation
@@ -14,14 +14,18 @@ https://www.npmjs.com/package/inquirer#documentation
 
 https://coding-boot-camp.github.io/full-stack/nodejs/how-to-install-nodejs
 
-Heroku is also needed
+Heroku is also needed:
 
 
 ## Usage
 
-![Tyler Vick's Note Taker screenshot](./assets/)
+![Tyler Vick's Note Taker screenshot](./assets/NoteTakerScreenshot.png)
 
-The URL of the GitHub repository: https://github.com/jrtvick/svg-logo-maker.git
+![Tyler Vick's Note Taker screenshot with saved notes](./assets/NoteTakerScreenshot2.png)
+
+The URL of the GitHub repository: https://github.com/jrtvick/note-taker.git
+
+The URL of the deployed Heroku link: 
 
 
 ## Credits
@@ -32,11 +36,11 @@ https://nodejs.org/en/download
 
 https://www.npmjs.com/package/inquirer#documentation
 
+https://expressjs.com/en/guide/routing.html#express-router
+
 https://coding-boot-camp.github.io/full-stack/nodejs/how-to-install-nodejs
 
 https://coding-boot-camp.github.io/full-stack/github/professional-readme-guide
-
-https://coding-boot-camp.github.io/full-stack/computer-literacy/video-submission-guide
 
 https://www.freecodecamp.org/news/svg-rectangle-and-other-svg-shapes/#:~:text=An%20SVG%20drawing%20can%20use,Line%2C%20Polyline%2C%20and%20Polygon
 
