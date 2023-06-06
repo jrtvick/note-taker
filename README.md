@@ -16,6 +16,8 @@ https://coding-boot-camp.github.io/full-stack/nodejs/how-to-install-nodejs
 
 Heroku is also needed:
 
+https://devcenter.heroku.com/articles/getting-started-with-nodejs?singlepage=true
+
 
 ## Usage
 
@@ -25,7 +27,7 @@ Heroku is also needed:
 
 The URL of the GitHub repository: https://github.com/jrtvick/note-taker.git
 
-The URL of the deployed Heroku link: 
+The URL of the deployed Heroku link: https://note-taker-jrtvick.herokuapp.com/
 
 
 ## Credits
