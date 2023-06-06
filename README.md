@@ -44,8 +44,6 @@ https://coding-boot-camp.github.io/full-stack/nodejs/how-to-install-nodejs
 
 https://coding-boot-camp.github.io/full-stack/github/professional-readme-guide
 
-https://www.freecodecamp.org/news/svg-rectangle-and-other-svg-shapes/#:~:text=An%20SVG%20drawing%20can%20use,Line%2C%20Polyline%2C%20and%20Polygon
-
 
 
 ## License
